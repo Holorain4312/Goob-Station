@@ -279,3 +279,21 @@
     Piercing: 20
     Heat: 20
     Structural: 30
+
+- type: damageModifierSet
+  id: MolluscoidShell
+  coefficients:
+    Blunt: 0.5
+    Piercing: 0.5
+    heat: 1.9
+    cold: 0
+  ignoreArmorPierceFlags: All # Goobstation
+
+- type: damageModifierSet
+  id: Molluscoid
+  coefficients:
+    Blunt: 0.8
+    Piercing: 0.85
+    heat: 2
+    cold: 0
+  ignoreArmorPierceFlags: All # Goobstation

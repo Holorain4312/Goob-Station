@@ -1,0 +1,185 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Plyush <121322002+Plyushsune@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouge2t7 <sarahoneill132@hotmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 plyush <121322002+toasterpm87@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: species
+  id: Molluscoid
+  name: species-name-molluscoid
+  roundStart: true
+  prototype: MobMolluscoid
+  sprites: MobMolluscoidSprites
+  markingLimits: MobMolluscoidMarkingLimits
+  dollPrototype: MobMolluscoidDummy
+  skinColoration: Hues
+
+# The lack of a layer means that
+# this person cannot have round-start anything
+# applied to that layer. It has to instead
+# be defined as a 'custom base layer'
+# in either the mob's starting marking prototype,
+# or it has to be added in C#.
+- type: speciesBaseSprites
+  id: MobMolluscoidSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobMolluscoidHead
+    Chest: MobMolluscoidChest
+    Groin: MobMolluscoidGroin
+    HeadTop: MobHumanoidAnyMarking
+    LArm: MobMolluscoidLArm
+    RArm: MobMolluscoidRArm
+    LHand: MobMolluscoidLHand
+    RHand: MobMolluscoidRHand
+    LLeg: MobMolluscoidLLeg
+    RLeg: MobMolluscoidRLeg
+    LFoot: MobMolluscoidLFoot
+    RFoot: MobMolluscoidRFoot
+    Tail: MobHumanoidAnyMarking # Goobstation - Required for felinids, harpies & tajaran.
+    HeadSide: MobHumanoidAnyMarking # Oni port from DeltaV
+
+- type: markingPoints
+  id: MobMolluscoidMarkingLimits
+  points:
+    Special: # the cat ear joke, its real *godo*
+      points: 1
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    Tail: # the cat tail joke, its real *godo*
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: false
+    Chest:
+      points: 3
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidHead
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidHeadMale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidHeadFemale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidChest
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidChestMale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidChestFemale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidGroin
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidGroinMale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidGroinFemale
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidLLeg
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidLArm
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidLHand
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidLFoot
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidRLeg
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidRArm
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidRHand
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobMolluscoidRFoot
+  baseSprite:
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: r_foot

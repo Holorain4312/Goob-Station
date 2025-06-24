@@ -1,0 +1,149 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: PartMolluscoid
+  parent: [BaseItem, BasePart]
+  name: "Molluscoid body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: "chest_m"
+  - type: Icon
+    sprite: _Goobstation/Mobs/Species/Molluscoid/parts.rsi
+    state: "chest_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+  - type: Damageable
+    damageContainer: Biological # Molluscoid
+    damageModifierSet: Molluscoid
+
+- type: entity
+  id: ChestMolluscoid
+  name: "Molluscoid chest"
+  parent: [PartMolluscoid, BaseChest]
+  components:
+    - type: Sprite
+      state: "chest_m"
+    - type: Icon
+      state: "chest_m"
+    - type: Damageable
+      damageModifierSet: MolluscoidShell
+
+- type: entity
+  id: GroinMolluscoid
+  name: "Molluscoid groin"
+  parent: [PartMolluscoid, BaseGroin]
+  components:
+    - type: Sprite
+      state: "groin_m"
+    - type: Icon
+      state: "groin_m"
+    - type: Damageable
+      damageModifierSet: MolluscoidShell
+
+- type: entity
+  id: HeadMolluscoid
+  name: "Molluscoid head"
+  parent: [PartMolluscoid, BaseHead]
+  components:
+    - type: Sprite
+      state: "head_m"
+    - type: Icon
+      state: "head_m"
+    - type: Damageable
+      damageModifierSet: MolluscoidShell
+
+- type: entity
+  id: LeftArmMolluscoid
+  name: "left Molluscoid arm"
+  parent: [PartMolluscoid, BaseLeftArm]
+  components:
+    - type: Sprite
+      state: "l_arm"
+    - type: Icon
+      state: "l_arm"
+    - type: Damageable
+      damageModifierSet: MolluscoidShell
+
+- type: entity
+  id: RightArmMolluscoid
+  name: "right Molluscoid arm"
+  parent: [PartMolluscoid, BaseRightArm]
+  components:
+    - type: Sprite
+      state: "r_arm"
+    - type: Icon
+      state: "r_arm"
+    - type: Damageable
+      damageModifierSet: MolluscoidShell
+
+- type: entity
+  id: LeftHandMolluscoid
+  name: "left Molluscoid hand"
+  parent: [PartMolluscoid, BaseLeftHand]
+  components:
+    - type: Sprite
+      state: "l_hand"
+    - type: Icon
+      state: "l_hand"
+
+- type: entity
+  id: RightHandMolluscoid
+  name: "right Molluscoid hand"
+  parent: [PartMolluscoid, BaseRightHand]
+  components:
+    - type: Sprite
+      state: "r_hand"
+    - type: Icon
+      state: "r_hand"
+
+- type: entity
+  id: LeftLegMolluscoid
+  name: "left Molluscoid leg"
+  parent: [PartMolluscoid, BaseLeftLeg]
+  components:
+    - type: Sprite
+      state: "l_leg"
+    - type: Icon
+      state: "l_leg"
+
+- type: entity
+  id: RightLegMolluscoid
+  name: "right Molluscoid leg"
+  parent: [PartMolluscoid, BaseRightLeg]
+  components:
+    - type: Sprite
+      state: "r_leg"
+    - type: Icon
+      state: "r_leg"
+
+- type: entity
+  id: LeftFootMolluscoid
+  name: "left Molluscoid foot"
+  parent: [PartMolluscoid, BaseLeftFoot]
+  components:
+    - type: Sprite
+      state: "l_foot"
+    - type: Icon
+      state: "l_foot"
+
+- type: entity
+  id: RightFootMolluscoid
+  name: "right Molluscoid foot"
+  parent: [PartMolluscoid, BaseRightFoot]
+  components:
+    - type: Sprite
+      state: "r_foot"
+    - type: Icon
+      state: "r_foot"
