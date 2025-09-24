@@ -118,3 +118,18 @@
     icon: { sprite: _Goobstation/Objects/Misc/sandevistan.rsi, state: icon }
     itemIconStyle: NoItem
     event: !type:ToggleSandevistanEvent
+
+- type: entity
+  id: DarkswapAction
+  name: Darkswap
+  description: Vanish into the darkness
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    useDelay: 2
+    icon: { sprite: _Goobstation/Objects/Weapons/Melee/mantis_blade.rsi, state: icon }
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Items/unsheath.ogg
+    event: !type:DarkswapEvent

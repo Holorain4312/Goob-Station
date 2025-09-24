@@ -46,7 +46,14 @@
     sprite: _EinsteinEngines/Mobs/Species/Shadowkin/organs.rsi
     layers:
     - state: core
-
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [Shadowkin]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
 
 - type: entity
   id: OrganShadowkinTongue

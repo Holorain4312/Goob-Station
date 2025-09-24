@@ -104,6 +104,10 @@
         ratios:
           CarbonDioxide: 0.5
           Oxygen: -0.5
+      - !type:Oxygenate # Goobstation - Darkswap rework
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
     Gas:
       effects:
       - !type:Oxygenate
@@ -168,6 +172,11 @@
         ratios:
           CarbonDioxide: 0.5
           Oxygen: -0.5
+      - !type:Oxygenate # Goobstation - Darkswap rework
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+        factor: 2 # Literally the only good way to achieve what i wanted to do, don't edit this value unless you are removing the shadowkin's ability to breath in the dark
 
 - type: reagent
   id: Plasma

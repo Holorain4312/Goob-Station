@@ -201,6 +201,7 @@
       baseSprintSpeed: 4.5
     - type: Speech
       allowedEmotes: ['Mars', 'Wurble']
+    - type: Darkswap # Goobstation
     - type: CollectiveMind
       defaultChannel: Empathy
       channels:
