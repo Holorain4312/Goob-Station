@@ -14,7 +14,9 @@ public sealed partial class DarkswapComponent : Component
     [DataField]
     public EntityUid? ActionUid;
 
-
+    //are they currently in the dark?
+    [DataField]
+    public bool inDark = false;
 }
 
 public sealed partial class DarkswapEvent : InstantActionEvent;

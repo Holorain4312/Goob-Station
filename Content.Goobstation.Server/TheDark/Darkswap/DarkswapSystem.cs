@@ -11,6 +11,7 @@ using Robust.Shared.Map;
 using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.Random;
 using Robust.Shared.Physics;
+using Content.Shared.Coordinates;
 
 
 namespace Content.Goobstation.Server.Thedark.Darkswap;
@@ -25,6 +26,8 @@ public sealed class DarkswapSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+
+    EntityCoordinates originLoc;
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
     public override void Initialize()
@@ -61,26 +64,43 @@ public sealed class DarkswapSystem : EntitySystem
             return;
         }
 
+
+        if(!component.inDark){
+            originLoc = Transform(uid).Coordinates;
+        }
+
         var darkLoc = Transform(darkUid.Value).Coordinates;
 
-        var xform = Transform(darkUid.Value);
-        var coords = xform.Coordinates;
-        var MaxRandomRadius = 100;
-        var MaxRandomTeleportAttempts = 10;
-        //Sets a random very far coordinate for it to attempt off of, main idea being you appear in a random part of darkspace
-        var randPos = coords.Offset(_random.NextVector2(MaxRandomRadius));
-        //
-        var newCoords = randPos;
-        for (var i = 0; i < MaxRandomTeleportAttempts; i++)
-        {
-            //should work the vast majority of cases, because this is teleporting you to a planet map, we don't need to worry about throwing them into space and the right position isn't quite as important
-            var randVector = new Vector2(1,1);
-            newCoords = randPos.Offset(randVector);
-            if (!_lookup.AnyEntitiesIntersecting(_transform.ToMapCoordinates(newCoords), LookupFlags.Static))
+        var newCoords = originLoc;
+
+        if(!component.inDark){
+            var xform = Transform(darkUid.Value);
+            var coords = xform.Coordinates;
+            var MaxRandomRadius = 100;
+            var MaxRandomTeleportAttempts = 10;
+            //Sets a random very far coordinate for it to attempt off of, main idea being you appear in a random part of darkspace
+            var randPos = coords.Offset(_random.NextVector2(MaxRandomRadius));
+            //
+            newCoords = randPos;
+            for (var i = 0; i < MaxRandomTeleportAttempts; i++)
             {
-                break;
+                //should work the vast majority of cases, because this is teleporting you to a planet map, we don't need to worry about throwing them into space and the right position isn't quite as important
+                var randVector = new Vector2(1,1);
+                newCoords = randPos.Offset(randVector);
+                if (!_lookup.AnyEntitiesIntersecting(_transform.ToMapCoordinates(newCoords), LookupFlags.Static))
+                {
+                    break;
+                }
             }
+            _transform.SetCoordinates(uid, newCoords);
+
+            component.inDark = true;
         }
-        _transform.SetCoordinates(uid, newCoords);
+        else
+        {
+            component.inDark = false;
+
+            _transform.SetCoordinates(uid, originLoc);
+        }
     }
 }
